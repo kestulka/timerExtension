@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "Timer",
+  "description": "set timer",
+  "icons": {
+    "16": "stopwatch.png",
+    "48": "stopwatch.png",
+    "128": "stopwatch.png"
+  },
+  "action": {
+    "default_icon": "stopwatch.png",
+    "default_title": "Timer",
+    "default_popup": "popup/popup.html"
+  },
+  "version": "1.0"
+}
