@@ -1,0 +1,12 @@
+body {
+  width: 15rem;
+  height: 5rem;
+}
+
+#startBtn {
+  margin-bottom: 1em;
+}
+#addBtn {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}

@@ -1,22 +1,30 @@
-const mainDiv = document.createElement("div");
-mainDiv.classList.add("main");
+const tasksArr = [];
 
-const image = document.createElement("img");
-image.src = "../stopwatch.png";
-mainDiv.appendChild(image);
+const addTaskBtn = document.getElementById("addTaskBtn");
+addTaskBtn.addEventListener("click", () => addTask());
 
-const timer = document.createElement("h1");
-timer.textContent = "00:00";
-mainDiv.appendChild(timer);
+function addTask() {
+  const tasksCount = tasksArr.length;
+  tasksArr.push("");
 
-const formDiv = document.createElement("div");
-const form = document.createElement("form");
+  const taskRow = document.createElement("div");
+  taskRow.classList.add("task-row");
 
-const taskInput = document.createElement("input");
-taskInput.type = "text";
-taskInput.placeholder = "Enter task";
-form.appendChild(taskInput);
+  const text = document.createElement("input");
+  text.type = "text";
+  text.placeholder = "Enter a task...";
+  text.addEventListener("change", () => {
+    tasksArr[tasksCount] = text.value;
+    console.log(tasksArr);
+  });
 
-const addButton = document.createElement("button");
-addButton.textContent("Add Task");
-form.appendChild(addButton);
+  const deleteBtn = document.createElement("input");
+  deleteBtn.type = "button";
+  deleteBtn.value = "X";
+
+  taskRow.appendChild(text);
+  taskRow.appendChild(deleteBtn);
+
+  const taskContainer = document.getElementById("taskContainer");
+  taskContainer.appendChild(taskRow);
+}
