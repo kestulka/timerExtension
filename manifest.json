@@ -1,5 +1,6 @@
 {
   "manifest_version": 3,
+  "version": "1.0",
   "name": "Timer",
   "description": "set timer",
   "icons": {
@@ -12,5 +13,8 @@
     "default_title": "Timer",
     "default_popup": "popup/popup.html"
   },
-  "version": "1.0"
+  "permissions": ["storage", "alarms", "notifications"],
+  "background": {
+    "service_worker": "background.js"
+  }
 }
