@@ -7,9 +7,20 @@ chrome.alarms.onAlarm.addListener((alarm) => {
     chrome.storage.local.get(["timer", "isRunning"], (res) => {
       if (res.isRunning) {
         let timer = res.timer + 1;
-        console.log(timer);
+        let isRunning = true;
+        if (timer === 60 * 25) {
+          // to test: (timer === 10)
+          this.registration.showNotification("Timer", {
+            body: "25 minutes have passed!",
+            icon: "stopwatch.png",
+          });
+          timer = 0;
+          isRunning = false;
+        }
+        // console.log(timer);
         chrome.storage.local.set({
           timer,
+          isRunning,
         });
       }
     });
