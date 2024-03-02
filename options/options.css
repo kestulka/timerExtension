@@ -1,0 +1,48 @@
+/* Reset default styles */
+html,
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9; /* Light background color */
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Style for the h1 heading */
+h1 {
+  font-size: 24px; /* Big text size */
+  color: #ff3333; /* Light red color */
+  margin: 20px 10px 20px 10px; /* Add some spacing */
+}
+
+/* Style for the label and input */
+label {
+  display: block;
+  font-size: 18px; /* Big text size */
+  color: #333; /* Dark text color */
+  margin: 20px 10px 20px 10px;
+}
+
+input {
+  width: 200px;
+  padding: 8px;
+  font-size: 16px; /* Big text size */
+  margin: 20px 10px 20px 10px;
+}
+
+/* Style for the save button */
+#saveBtn {
+  padding: 10px 20px;
+  font-size: 18px; /* Big text size */
+  color: #fff; /* White text color */
+  background-color: #ff3333; /* Light red color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#saveBtn:hover {
+  background-color: #cc0000; /* Darker red color on hover */
+}

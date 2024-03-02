@@ -7,19 +7,18 @@
     <title>Timer</title>
   </head>
   <body>
-    <img
-      id="popupImg"
-      src="../stopwatch.png"
-      alt="Stopwatch"
-      width="80"
-      height="80"
-    />
-    <h1 id="time">00:00</h1>
-    <button id="startTimerBtn">Start Timer</button>
-    <button id="resetTimerBtn">Reset Timer</button>
-    <button id="addTaskBtn">Add Task</button>
-    <div id="taskContainer"></div>
+    <div class="mainDiv">
+      <img id="popupImg" src="../stopwatch.png" alt="Stopwatch" />
+      <h1 id="time">00:00</h1>
 
+      <div id="buttonsDiv">
+        <button id="startTimerBtn">Start Timer</button>
+        <button id="resetTimerBtn">Reset Timer</button>
+        <button id="addTaskBtn">Add Task</button>
+      </div>
+
+      <div id="taskContainer"></div>
+    </div>
     <script src="popup.js"></script>
   </body>
 </html>
