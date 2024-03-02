@@ -4,14 +4,13 @@ chrome.alarms.create("Timer", {
 
 chrome.alarms.onAlarm.addListener((alarm) => {
   if (alarm.name === "Timer") {
-    chrome.storage.local.get(["timer", "isRunning"], (res) => {
+    chrome.storage.local.get(["timer", "isRunning", "timeOption"], (res) => {
       if (res.isRunning) {
         let timer = res.timer + 1;
         let isRunning = true;
-        if (timer === 60 * 25) {
-          // to test: (timer === 10)
+        if (timer === 60 * res.timeOption) {
           this.registration.showNotification("Timer", {
-            body: "25 minutes have passed!",
+            body: `${res.timeOption} minutes have passed!`,
             icon: "stopwatch.png",
           });
           timer = 0;
@@ -27,9 +26,10 @@ chrome.alarms.onAlarm.addListener((alarm) => {
   }
 });
 
-chrome.storage.local.get(["timer", "isRunning"], (res) => {
+chrome.storage.local.get(["timer", "isRunning", "timeOption"], (res) => {
   chrome.storage.local.set({
     timer: "timer" in res ? res.timer : 0,
+    timeOption: "timeOption" in res ? res.timeOption : 15,
     isRunning: "isRunning" in res ? res.isRunning : false,
   });
 });
